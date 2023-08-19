@@ -29,6 +29,8 @@ class Exercise(Base):
     exercise_name = Column(String)
     exercise_type = Column(String)
     
+    
+
     def __repr__(self):
         return f'Exercise(id={self.id}, ' + \
             f'exercise_name={self.exercise_name}, ' + \
@@ -40,6 +42,8 @@ class User(Base):
 
     id = Column(Integer, primary_key=True)
     user_name = Column(String)
+
+    exercises = relationship('Exercise', backref=backref('user'))
 
     def __repr__(self):
         return f'User(id={self.id}, ' + \
