@@ -22,6 +22,17 @@ class Workout(Base):
             f'difficulty={self.difficulty})'
     
 
+class Exercise(Base):
+    __tablename__ = 'exercises'
+
+    id = Column(Integer, primary_key=True)
+    exercise_name = Column(String)
+    exercise_type = Column(String)
+    
+    def __repr__(self):
+        return f'Exercise(id={self.id}, ' + \
+            f'exercise_name={self.exercise_name}, ' + \
+            f'exercise_type={self.exercise_type})'
 
 
 class User(Base):
