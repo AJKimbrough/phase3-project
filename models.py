@@ -29,7 +29,7 @@ class Exercise(Base):
     exercise_name = Column(String)
     exercise_type = Column(String)
     
-    
+    user_id = Column(Integer, ForeignKey('users.id'))
 
     def __repr__(self):
         return f'Exercise(id={self.id}, ' + \
