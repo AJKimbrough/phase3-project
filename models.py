@@ -24,6 +24,8 @@ class Workout(Base):
     started_at = Column(DateTime(), server_default=func.now())
     completed_at = Column(DateTime(), onupdate=func.now())
 
+    users = relationship('User', secondary=athlete, back_populates='workouts')
+
     def __repr__(self):
         return f'Workout(id={self.id}, ' + \
             f'workout_name={self.name}, ' + \
