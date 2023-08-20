@@ -25,8 +25,18 @@ workouts = [
         workout_name=fake.name()
 
     )
-for i in range(20)
+for i in range(50)
 ]
 
 session.add_all(workouts)
+session.commit()
+
+exercises = [
+    Exercise(
+        exercise_name=fake.name()
+    )
+for i in range(100)
+]
+
+session.add_all(exercises)
 session.commit()
