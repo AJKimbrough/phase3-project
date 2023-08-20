@@ -11,10 +11,11 @@ session = Session()
 fake = Faker()
 
 users = [
-    User(),
-    User(),
-    User()
+    User(
+        user_name=fake.name()
+    )
+for i in range(20)
 ]
 
-session._bulk_save_objects(users)
+session.add_all(users)
 session.commit()
