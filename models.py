@@ -53,7 +53,7 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     user_name = Column(String)
 
-    exercises = relationship('Exercise', backref=backref('user'))
+    workouts = relationship('Workouts', secondary=athlete backref=backref('user'))
 
     def __repr__(self):
         return f'User(id={self.id}, ' + \
