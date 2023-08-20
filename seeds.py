@@ -1,4 +1,4 @@
-from models import User
+from models import User, Workout, Exercise
 from sqlalchemy import create_engine 
 from sqlalchemy.orm import sessionmaker
 from faker import Faker
@@ -18,4 +18,15 @@ for i in range(20)
 ]
 
 session.add_all(users)
+session.commit()
+
+workouts = [
+    Workout(
+        workout_name=fake.name()
+
+    )
+for i in range(20)
+]
+
+session.add_all(workouts)
 session.commit()
