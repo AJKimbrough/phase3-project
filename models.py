@@ -7,6 +7,14 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+athlete = Table(
+    'athletes',
+    Base.metadata,
+    Column('workout_id', ForeignKey('workouts.id'), primary_key=True),
+    Column('user_id', ForeignKey('users.id'), primary_key=True),
+    extend_existing=True,
+)
+
 class Workout(Base):
     __tablename__ = 'workouts'
 
